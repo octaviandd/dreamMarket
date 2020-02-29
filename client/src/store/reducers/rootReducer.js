@@ -2,7 +2,9 @@
 
 import { combineReducers } from "redux";
 import { dreamReducer } from "./dreamsReducer";
+import { commentsReducer } from "./commentsReducer";
 
 export const rootReducer = combineReducers({
-  dreams: dreamReducer
+  dreams: dreamReducer,
+  comments: commentsReducer
 });
