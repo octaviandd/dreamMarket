@@ -1,34 +1,9 @@
 /** @format */
-import { ADD_DREAM } from "../actions/actionType";
+
+import { ADD_DREAM, GET_DREAMS, GET_DREAM } from "../actions/actionType";
 
 const initState = {
-  dreams: [
-    {
-      id: 1,
-      title: "example",
-      motif: "example",
-      desc:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-      author: "example_name"
-    },
-    {
-      id: 2,
-      title: "example",
-      motif: "example",
-      desc:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-      author: "example_name"
-    },
-    {
-      id: 3,
-      title: "example",
-      motif: "example",
-      desc:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-      author: "example_name"
-    }
-  ],
-  loading: false
+  dreams: []
 };
 
 export const dreamReducer = (state = initState, action) => {
@@ -38,6 +13,14 @@ export const dreamReducer = (state = initState, action) => {
         ...state,
         dreams: [action.payload, ...state.dreams]
       };
+    case GET_DREAMS:
+      return {
+        ...state,
+        dreams: [...action.payload]
+      };
+    case GET_DREAM:
+      console.log(action.payload);
+      return state.dreams.find(item => item._id === action.id);
     default:
       return state;
   }
