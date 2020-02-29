@@ -1,8 +1,7 @@
 /** @format */
 
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "shards-ui/dist/css/shards.min.css";
+import { Link } from "react-router-dom";
 import {
   Card,
   CardHeader,
@@ -21,8 +20,10 @@ const DreamContainer = ({ dream }) => {
         <CardImg></CardImg>
         <CardBody>
           <CardTitle>{dream.motif}</CardTitle>
-          <p>{dream.desc}</p>
-          <Button>Read more &rarr;</Button>
+          <p style={{ maxHeight: "142px", overflow: "hidden" }}>{dream.desc}</p>
+          <Link to={`/dreams/${dream._id}`}>
+            <Button>Read more &rarr;</Button>
+          </Link>
         </CardBody>
         <CardFooter>{dream.author}</CardFooter>
       </Card>
