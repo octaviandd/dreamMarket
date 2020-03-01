@@ -17,6 +17,7 @@ const db = config.get("mongoURI");
 //ROUTES
 const dreams = require("./routes/api/dreamsRoute");
 const comments = require("./routes/api/commentsRoute");
+const symbols = require("./routes/api/symbolsRoute");
 
 //CONNECT TO MONGODB
 mongoose
@@ -30,6 +31,7 @@ mongoose
 
 app.use("/api/dreams", dreams);
 app.use("/api/comments", comments);
+app.use("/api/symbols", symbols);
 
 //SERVER STATIC ASSTES IF IN PRODUCTION
 if (process.env.NODE_ENV === "production") {
