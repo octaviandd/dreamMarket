@@ -41,14 +41,6 @@ function DreamPage({ dream }) {
           </CardBody>
           <CardFooter>{author}</CardFooter>
         </Card>
-        <div>
-          <Button onClick={() => setComments(!showComments)} className="mt-5">
-            Show Comments
-          </Button>
-          <Collapse open={showComments}>
-            <CommentsContainer></CommentsContainer>
-          </Collapse>
-        </div>
       </div>
     );
   }
