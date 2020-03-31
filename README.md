@@ -19,7 +19,7 @@ Available routes:
 
 ## Technologies
 
-- React.js 
+- ReactJS
 - React Hooks
 - React Particles
 - Shards UI
